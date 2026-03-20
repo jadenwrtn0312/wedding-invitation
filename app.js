@@ -5,7 +5,18 @@
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.15 });
-  document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+  document.querySelectorAll('.fade-in, .slide-up, .scale-in, .stagger').forEach(function(el) { obs.observe(el); });
+
+  // Parallax on cover
+  var cover = document.querySelector('.cover img');
+  if (cover) {
+    window.addEventListener('scroll', function() {
+      var st = window.pageYOffset;
+      if (st < window.innerHeight) {
+        cover.style.transform = 'translateY(' + (st * 0.15) + 'px) scale(' + (1 + st * 0.0002) + ')';
+      }
+    }, { passive: true });
+  }
 
   // Calendar - June 2026 starts Monday
   var grid = document.getElementById('calGrid');
