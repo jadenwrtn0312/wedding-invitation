@@ -197,18 +197,11 @@ body.lightbox-open { overflow:hidden; }
 .verse-ornament { animation:ornamentSpin 8s linear infinite; display:inline-block; }
 @keyframes ornamentSpin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
 
-/* Transit sections slide in */
-.transit-section { opacity:0; transform:translateX(-20px); transition:opacity 0.5s ease, transform 0.5s ease; }
-.ww-loc.visible .transit-section:nth-child(3) { opacity:1; transform:translateX(0); transition-delay:0s; }
-.ww-loc.visible .transit-section:nth-child(4) { opacity:1; transform:translateX(0); transition-delay:0.12s; }
-.ww-loc.visible .transit-section:nth-child(5) { opacity:1; transform:translateX(0); transition-delay:0.24s; }
-.ww-loc.visible .transit-section:nth-child(6) { opacity:1; transform:translateX(0); transition-delay:0.36s; }
+/* Transit sections */
+.transit-section { opacity:1; }
 
-/* Account accordion open */
+/* Account */
 .account-group { transition:max-height 0.4s ease; }
-.account-item { opacity:0; transform:translateY(10px); transition:opacity 0.4s ease, transform 0.4s ease; }
-.account.visible .account-item:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.1s; }
-.account.visible .account-item:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.2s; }
 
 /* Scroll arrow bounce */
 .scroll-arrow { animation:arrowBounce 2s ease-in-out infinite; }
